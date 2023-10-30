@@ -1,27 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+    overflow-x: hidden !important;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.text-dela {
+    font-family: "Dela Gothic One", sans-serif;
+}
+._container{
+    max-width: 1444px;
+    padding-left: 6%;
+    padding-right: 6%;
+    margin: auto;
+}
+  
+  @media screen and(max-width:768px) {
+    ._container{
+      max-width: 100%;
+      padding-left: 4%;
+      padding-right: 4%;
+      margin: auto;
+    }
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
