@@ -19,7 +19,9 @@ const Navbar = () => {
   return (
     <div className='bg-black text-white fixed top-0 w-full'>
         <div className='_container flex justify-between items-center py-[10px]'>
-            <p className='text-dela text-xl'>HairShampoo</p>
+            <Link href={'/'}>
+              <p className='text-dela text-xl cursor-pointer'>HairShampoo</p>
+            </Link>
             <button onClick={toggleDrawer} className='block md:hidden text-2xl'><GiHamburgerMenu/></button>
             <div className='hidden md:flex justify-end items-center gap-2'>
                 {
