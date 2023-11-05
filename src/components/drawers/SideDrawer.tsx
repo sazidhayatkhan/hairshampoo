@@ -30,10 +30,10 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, children }) =>
       }`}
       onClick={onClose}
     >
-      <div
+      {/* <div
         className="fixed inset-0 bg-black opacity-70"
         style={{ zIndex: -1 }}
-      ></div>
+      ></div> */}
       <div
         className="w-[60%] h-full bg-white"
         onClick={handleClickInside}
