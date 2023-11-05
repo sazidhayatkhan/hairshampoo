@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-
+import Link from 'next/link'
 const ProdCard = ({item}:any) => {
   return (
     <div className='border border-purple-400'>
@@ -16,7 +16,9 @@ const ProdCard = ({item}:any) => {
                 <p className='text-dela font-semibold text-base mb-1'>{item?.title}</p>
                 <p className='text-sm font-semibold'>Price : BDT {item?.price}</p>
             </div>
-            <button className='bg-purple-400 text-black px-3 py-2 text-sm font-semibold border border-purple-400 hover:bg-transparent transition duration-500 mt-3 md:mt-0'>Details</button>
+            <Link href={`/products/${item?.id}`||""}>
+              <button className='bg-purple-400 text-black px-3 py-2 text-sm font-semibold border border-purple-400 hover:bg-transparent transition duration-500 mt-3 md:mt-0'>Details</button>
+            </Link>
         </div>
     </div>
   )
