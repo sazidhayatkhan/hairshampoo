@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 const ProductDetails = ({detailsData}:any) => {
@@ -19,8 +20,9 @@ const ProductDetails = ({detailsData}:any) => {
                     <p className='text-dela text-3xl mb-2'>{detailsData?.title}</p>
                     <p className='text-2xl font-bold mb-4 text-purple-600'>BDT {detailsData?.price}</p>
                     <p>{detailsData?.description}</p>
+                    <button className='bg-purple-400 px-4 py-1 text-lg mt-5'>Add to Cart</button>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
   )
