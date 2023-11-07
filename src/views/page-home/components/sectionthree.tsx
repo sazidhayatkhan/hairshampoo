@@ -2,8 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 const Sectionthree = () => {
   return (
-    <div className='_container bg-purple-400'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-3 py-12 md:py-24'>
+    <div className=' bg-purple-400'>
+        <div className='_container grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-3 py-12 md:py-24'>
                 <div className=''>
                     <Image 
                         src="/images/ss.png"

@@ -2,8 +2,8 @@ import React from 'react'
 import {AiFillHome} from 'react-icons/ai'
 const SectionFive = () => {
   return (
-    <div className='_container bg-purple-400'>
-        <div className='py-12 md:py-24'>
+    <div className='bg-purple-400'>
+        <div className='_container py-12 md:py-24'>
             <div className='w-full md:w-[60%] mx-auto mb-12 md:mb-20'>
                 <p className='text-dela text-2xl md:text-4xl text-center mb-4 md:mb-2'>Lorem ipsum dolor sit, amet consectetur adipisici</p>
                 <p className='text-sm md:text-base text-center font-medium'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, obcaecati. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, obcaecati.</p>

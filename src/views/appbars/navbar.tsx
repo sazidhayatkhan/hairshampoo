@@ -2,19 +2,28 @@
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
+import {AiOutlineShoppingCart,AiOutlineClose} from 'react-icons/ai'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import SideDrawer from '@/components/drawers/SideDrawer';
+import CartDrawer from '@/components/drawers/CartDrawer';
 
 const Navbar = () => {
   const pathname = usePathname()
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const [isCartOpen, setIsCartOpen] = React.useState(false);
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   const closeDrawer = () => {
     setIsDrawerOpen(false);
+  };
+  const closeCart = () => {
+    setIsCartOpen(false);
   };
   return (
     <div className='bg-black text-white fixed top-0 w-full'>
@@ -27,23 +36,30 @@ const Navbar = () => {
                 {
                     NavItems?.map((item:any,i:any)=>(
                         <Link href={item?.url}>
-                            <button key={i} className={`${pathname === item.url ? 'text-purple-500':'text-white'} p-2 font-medium`}>{item?.title}</button>
+                            <button key={i} className={`${pathname === item.url && !isCartOpen ? 'text-purple-500':'text-white'} p-2 font-medium`}>{item?.title}</button>
                         </Link>
                     ))
                 }
+                <button onClick={()=>setIsCartOpen(true)} className={`${isCartOpen ? 'text-purple-500':'text-white'} text-[22px]`}><AiOutlineShoppingCart/></button>
             </div>
         </div>
         <SideDrawer isOpen={isDrawerOpen} onClose={closeDrawer}>
-        <div className='text-red-600'>
-          {
-            NavItems?.map((item:any,i:any)=>(
-                <Link href={item?.url}>
-                    <button key={i} onClick={closeDrawer} className='text-purple-500 p-2 font-semibold w-full text-lg border-b-[1px] border-purple-400'>{item?.title}</button>
-                </Link>
-            ))
-          }
-        </div>
-      </SideDrawer>
+          <div className=''>
+            {
+              NavItems?.map((item:any,i:any)=>(
+                  <Link href={item?.url}>
+                      <button key={i} onClick={closeDrawer} className='text-purple-500 p-2 font-semibold w-full text-lg border-b-[1px] border-purple-400'>{item?.title}</button>
+                  </Link>
+              ))
+            }
+          </div>
+        </SideDrawer>
+        <CartDrawer isOpen={isCartOpen} onClose={closeCart}>
+          <div className='bg-purple-400 flex justify-between items-center p-4'>
+            <p className='text-dela'>Shopping Cart</p>
+            <button onClick={()=>setIsCartOpen(false)}><AiOutlineClose/></button>
+          </div>
+        </CartDrawer>
     </div>
   )
 }

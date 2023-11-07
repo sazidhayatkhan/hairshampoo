@@ -3,8 +3,8 @@ import Image from 'next/image'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 const Hero = () => {
   return (
-    <div className='_container bg-purple-400 pt-20 md:pt-32 pb-16 md:pb-24'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+    <div className='bg-purple-400 pt-20 md:pt-32 pb-16 md:pb-24'>
+        <div className='_container grid grid-cols-1 md:grid-cols-2 gap-4'>
             <div className='order-2 md:order-1'>
                     <div className='w-full md:w-[90%] mx-auto'>
                         <p className=''>Lorem ipsum dolor sit amet consectetur</p>

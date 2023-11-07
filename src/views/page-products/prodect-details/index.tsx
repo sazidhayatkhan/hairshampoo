@@ -1,7 +1,14 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
+import { useDispatch } from 'react-redux'
+import {add} from '../../../store/cartSlice'
+
 const ProductDetails = ({detailsData}:any) => {
+    const dispatch = useDispatch()
+    const addToCart = (detailsData:any) =>{
+        dispatch(add(detailsData))
+    }
   return (
     <div>
         <div className='py-24'>
@@ -20,7 +27,7 @@ const ProductDetails = ({detailsData}:any) => {
                     <p className='text-dela text-3xl mb-2'>{detailsData?.title}</p>
                     <p className='text-2xl font-bold mb-4 text-purple-600'>BDT {detailsData?.price}</p>
                     <p>{detailsData?.description}</p>
-                    <button className='bg-purple-400 px-4 py-1 text-lg mt-5'>Add to Cart</button>
+                    <button onClick={()=>addToCart(detailsData)} className='bg-purple-400 px-4 py-1 text-lg mt-5'>Add to Cart</button>
                 </div>
             </div>  
         </div>
