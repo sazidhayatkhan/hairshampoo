@@ -25,7 +25,7 @@ const CartDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, children }) =>
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-end transition-transform duration-300 ${
+      className={`fixed inset-0 z-50 flex items-center justify-end transition-transform duration-300${
         isOpen ? 'transform translate-x-0' : 'transform translate-x-full'
       }`}
       onClick={onClose}
@@ -35,7 +35,7 @@ const CartDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, children }) =>
         style={{ zIndex: -1 }}
       ></div> */}
       <div
-        className="w-[30%] h-full bg-white"
+        className="w-[30%] h-full bg-white drop-shadow-2xl"
         onClick={handleClickInside}
       >
         {children}
