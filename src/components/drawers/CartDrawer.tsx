@@ -35,7 +35,7 @@ const CartDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, children }) =>
         style={{ zIndex: -1 }}
       ></div> */}
       <div
-        className="w-[30%] h-full bg-white drop-shadow-2xl"
+        className="w-[70%] md:w-[30%] h-full bg-white drop-shadow-2xl"
         onClick={handleClickInside}
       >
         {children}

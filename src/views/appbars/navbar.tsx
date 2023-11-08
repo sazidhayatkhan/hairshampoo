@@ -31,7 +31,10 @@ const Navbar = () => {
             <Link href={'/'}>
               <p className='text-dela text-xl cursor-pointer'>HairShampoo</p>
             </Link>
-            <button onClick={toggleDrawer} className='block md:hidden text-2xl'><GiHamburgerMenu/></button>
+            <div className='flex justify-end items-center gap-3'>
+              <button onClick={()=>setIsCartOpen(true)} className={`text-white block md:hidden text-2xl`}><AiOutlineShoppingCart/></button>
+              <button onClick={toggleDrawer} className='block md:hidden text-2xl'><GiHamburgerMenu/></button>
+            </div>
             <div className='hidden md:flex justify-end items-center gap-2'>
                 {
                     NavItems?.map((item:any,i:any)=>(
